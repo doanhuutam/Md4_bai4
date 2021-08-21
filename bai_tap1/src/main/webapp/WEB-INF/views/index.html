@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Hom thu dien tu</h3>
+<form th:action="/show" method="post" th:object="list" >
+    <table>
+        <tr>
+            <td>language</td>
+            <td><select th:field="*{language}">
+                <option value="tiengviet">tiengviet</option>
+                <option value="tienganh">tienganh</option>
+                <option value="tiengtay">tiengtay</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>page_size</td>
+            <td><select th:field="*{size}">
+                <option value="5">5</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Spam</td>
+            <td><input type="checkbox"th:value="*{spam}" th:field="*{spam}">spam Fitter</td>
+        </tr>
+        <tr>
+            <td>sign</td>
+            <td><textarea th:field="*{sign}" th:value="*{sign}" th:utext="*{sign}"></textarea></td>
+        </tr>
+        <tr>
+            <td>
+                <button type="submit">guidi</button>
+            </td>
+            <td>
+                <button type="reset">cancel</button>
+            </td>
+        </tr>
+    </table>
+
+</form>
+</body>
+</html>

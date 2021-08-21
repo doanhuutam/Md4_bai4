@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="/layout :: head">
+</head>
+<body>
+<h3>Product Management</h3>
+<p>
+    <a th:href="@{/create}">
+        Add new product
+    </a>
+</p>
+<table id = "products" enctype="multipart/form-data">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Singer</th>
+        <th>Type</th>
+        <th>Img</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="product : ${list}" >
+        <td th:text="${product.name}"></td>
+        <td th:text="${product.singer}"></td>
+        <td th:text="${product.type}"></td>
+        <td><img width="100" height="100" th:src="@{'/image/' + ${product.link}}" alt="hinh anh"></td>
+    </tr>
+    </tbody>
+</table>
+<footer th:replace="/layout :: footer"></footer>
+</body>
+</html>

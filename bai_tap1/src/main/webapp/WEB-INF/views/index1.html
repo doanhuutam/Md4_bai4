@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Show Personal</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="container">
+    <h2>SETTING</h2>
+    <form action="/save" th:object="${list}" method="post" novalidate="novalidate">
+
+        <table class="table">
+            <tr>
+                <th>Languages</th>
+                <th><select th:field="*{languages}">
+                    <option value="English">English</option>
+                    <option value="china">China</option>
+                </select></th>
+            </tr>
+            <tr>
+                <th>pageSize</th>
+                <th><select th:field="*{pageSize}">
+                    <option value="5">5</option>
+                    <option value="10">10</option>
+                </select></th>
+            </tr>
+            <tr>
+                <th>Spam filter:</th>
+                <td><input type="checkbox" th:value="*{spamsFilter}" th:field="*{spamsFilter}"> Enables spam filter</td>
+            </tr>
+            <tr>
+                <th>Signature</th>
+                <th><textarea th:field="*{signature}" cols="30" rows="10" th:value="*{signature}" th:utext="*{signature}"></textarea></th>
+            </tr>
+            <tr>
+                <td>
+                    <button type="submit">Update</button>
+                </td>
+                <td>
+                    <button type="reset">Cancel</button>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+</div>
+</body>
+</html>

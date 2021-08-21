@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>hom thu vua gui</h3>
+<th:block th:each="love:${list}" >
+    <tr>
+        <td th:text="*{language}"></td>
+        <td th:text="*{page}"></td>
+        <td th:text="*{spam}"></td>
+        <td th:text="*{sign}"></td>
+    </tr>
+</th:block>
+</body>
+</html>
